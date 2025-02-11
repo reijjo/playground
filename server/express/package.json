@@ -1,0 +1,25 @@
+{
+  "name": "express",
+  "module": "index.ts",
+  "type": "module",
+	"scripts": {
+		"dev": "NODE_ENV=development bun --watch run src/index.ts",
+    "clean": "rm -rf node_modules .bun bun.lockb dist"
+	},
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "@types/morgan": "^1.9.9",
+    "morgan": "^1.10.0"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "colorette": "^2.0.20",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "helmet": "^8.0.0"
+  }
+}

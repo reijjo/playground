@@ -1,2 +1,2 @@
 # playground
-Just a place where I try new stuff
+Just a place where to try new stuff

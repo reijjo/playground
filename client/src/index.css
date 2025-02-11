@@ -4,12 +4,14 @@
   box-sizing: border-box;
 }
 
-html,
 body {
   width: 100%;
   height: 100%;
   margin: 0;
-  background-color: lightyellow;
+  color: light-dark(black, white);
+  background-color: light-dark(var(--bg-light), var(--bg-dark));
+
+  transition: background-color 0.5s ease;
 }
 
 .wrapper {
@@ -18,4 +20,88 @@ body {
   height: 100%;
   padding: 1rem 2rem;
   margin: 0 auto;
+}
+
+:root {
+  color-scheme: light dark;
+
+  --border-color: black;
+
+  --yellow: #fae9b0;
+  --yellow-1: hsl(60, 33%, 99%);
+  --yellow-2: hsl(44, 79%, 96%);
+  --yellow-3: #fcf3d3;
+  --yellow-4: #f9e8af;
+  --yellow-5: #f5de94;
+  --yellow-6: #e8d38b;
+  --yellow-7: #d7c279;
+  --yellow-8: #c6ad55;
+  --yellow-9: #cbb159;
+  --yellow-10: #c0a64d;
+  --yellow-11: #917815;
+  --yellow-12: #433a1b;
+
+  --pink: #fad3f3;
+  --pink-1: #fffcfe;
+  --pink-2: #fef7fc;
+  --pink-3: #fdeaf9;
+  --pink-4: #fbddf5;
+  --pink-5: #f6cfef;
+  --pink-6: #efbfe7;
+  --pink-7: #e4abdb;
+  --pink-8: #ce97c5;
+  --pink-9: #9b6793;
+  --pink-10: #8d5a86;
+  --pink-11: #895681;
+  --pink-12: #52234c;
+
+  --green: #d0f2db;
+  --green-1: #fafefc;
+  --green-2: #f3fbf6;
+  --green-3: #e2f8e9;
+  --green-4: #d1f3dc;
+  --green-5: #bdebcc;
+  --green-6: #abdebd;
+  --green-7: #99cbaa;
+  --green-8: #7fb090;
+  --green-9: #69997a;
+  --green-10: #5d8d6e;
+  --green-11: #48785a;
+  --green-12: #143c26;
+
+  --blue: #c3defd;
+  --blue-1: #fcfdff;
+  --blue-2: #f5faff;
+  --blue-3: #e9f3fe;
+  --blue-4: #daecff;
+  --blue-5: #c8e3ff;
+  --blue-6: #b2d6fe;
+  --blue-7: #9cc4f2;
+  --blue-8: #85acd9;
+  --blue-9: #6187b1;
+  --blue-10: #557aa4;
+  --blue-11: #4d729b;
+  --blue-12: #103459;
+
+  --gray: lightgray;
+  --gray-1: #fcfcfd;
+  --gray-2: #f9f9fb;
+  --gray-3: #eff0f3;
+  --gray-4: #e7e8ec;
+  --gray-5: #e0e1e6;
+  --gray-6: #d8d9e0;
+  --gray-7: #cdced7;
+  --gray-8: #b9bbc6;
+  --gray-9: #8b8d98;
+  --gray-10: #80828d;
+  --gray-11: #62636c;
+  --gray-12: #1e1f24;
+
+  --dark1: #2a2a2a;
+  --dark2: #1f1f1f;
+  --dark3: #111111;
+
+  --bg-light: hsl(44, 79%, 96%);
+  /* --bg-light: var(--yellow-1); */
+  --bg-dark: #111111;
 }
