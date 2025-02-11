@@ -1,0 +1,23 @@
+nav, footer {
+	width: 100%;
+	height: 4rem;
+	place-content: center;
+}
+
+nav {
+	border-bottom: 1px solid black;
+	/* position: sticky; */
+	/* top: 0; */
+	/* z-index: 100; */
+}
+
+footer {
+	border-top: 1px solid black;
+}
+
+.footer-wrapper {
+	height: 100%;
+	display: flex;
+	justify-content:flex-end;
+	align-items: center;
+}
