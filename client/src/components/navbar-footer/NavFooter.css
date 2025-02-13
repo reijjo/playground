@@ -7,7 +7,7 @@ footer {
 
 /* Navbar */
 nav {
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid light-dark(black, white);
 }
 
 .nav-wrapper {
@@ -18,18 +18,21 @@ nav {
 }
 
 .nav-center {
-  border: thin solid black;
+  border: thin solid light-dark(black, white);
   border-radius: 5rem;
   padding: 1rem 2rem;
   background-color: light-dark(var(--yellow-1), var(--dark2));
   box-shadow:
-    0 0 0 0.5rem rgba(255, 255, 224, 0.6),
-    0 0 0 1rem rgba(255, 255, 224, 0.4),
-    0 0 0 2rem rgba(255, 255, 224, 0.2);
+    0 0 0 0.5rem var(--nav-shadow-color),
+    0 0 0 1rem var(--nav-shadow-color-2),
+    0 0 0 2rem var(--nav-shadow-color-3);
   position: fixed;
   left: 50%;
   transform: translateX(-50%);
   z-index: 100;
+
+  display: flex;
+  gap: 1rem;
 
   transition: box-shadow 0.5s;
 
@@ -37,30 +40,18 @@ nav {
     cursor: pointer;
     box-shadow:
       -0.5rem 0.5rem var(--blue),
-      0 0 0 0.5rem rgba(255, 255, 224, 0.6),
-      0 0 0 1rem rgba(255, 255, 224, 0.4),
-      0 0 0 2rem rgba(255, 255, 224, 0.2);
-
+      0 0 0 0.5rem var(--nav-shadow-color),
+      0 0 0 1rem var(--nav-shadow-color-2),
+      0 0 0 2rem var(--nav-shadow-color-3);
     transition: none;
   }
 }
 
-[data-theme="dark"] .nav-center {
-  border: 1px solid white;
-  box-shadow:
-    0 0 0 0.5rem rgba(17, 17, 17, 0.6),
-    0 0 0 1rem rgba(17, 17, 17, 0.4),
-    0 0 0 2rem rgba(17, 17, 17, 0.2);
-
-  &:hover {
-    cursor: pointer;
-    box-shadow:
-      -0.5rem 0.5rem var(--blue),
-      0 0 0 0.5rem rgba(17, 17, 17, 0.6),
-      0 0 0 1rem rgba(17, 17, 17, 0.4),
-      0 0 0 2rem rgba(17, 17, 17, 0.2);
-  }
+.active {
+  font-weight: bold;
 }
+
+/* Navbar END */
 
 /* Footer */
 footer {

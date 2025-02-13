@@ -1,0 +1,10 @@
+.flex-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border: 1px solid;
+  border-color: light-dark(black, white);
+  border-radius: 0.5rem;
+  width: 10rem;
+}

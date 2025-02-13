@@ -1,5 +1,7 @@
 import "./NavFooter.css";
 
+import { NavLink } from "react-router";
+
 import { useTheme } from "../../context/theme/ThemeContext";
 
 export const Navbar = () => {
@@ -12,7 +14,18 @@ export const Navbar = () => {
           <h1>Playground</h1>
         </div>
         <div className="nav-center">
-          <p>LOGIN / REGISTER</p>
+          <NavLink
+            to="/"
+            className={({ isActive }) => (isActive ? "active" : "")}
+          >
+            HOME
+          </NavLink>
+          <NavLink
+            to="/register"
+            className={({ isActive }) => (isActive ? "active" : "")}
+          >
+            LOGIN / REGISTER
+          </NavLink>
         </div>
         <div className="nav-right">
           <button onClick={toggleTheme}>
