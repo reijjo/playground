@@ -27,7 +27,7 @@ a {
 }
 
 :root {
-  color-scheme: light dark;
+  /* color-scheme: light dark; */
 
   --border-color: black;
 

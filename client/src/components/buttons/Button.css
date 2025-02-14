@@ -1,0 +1,19 @@
+.btn {
+  height: 2.5rem;
+  display: grid;
+  place-items: center;
+  color: black;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.btn-filled {
+  border: 1px solid var(--green-9);
+  background-color: var(--green-5);
+
+  &:hover {
+    background-color: var(--green-6);
+  }
+}

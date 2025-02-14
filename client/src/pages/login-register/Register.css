@@ -4,3 +4,13 @@
   align-items: center;
   height: 100%;
 }
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.register-button {
+  margin: 1rem 0;
+}

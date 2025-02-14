@@ -6,5 +6,6 @@
   border: 1px solid;
   border-color: light-dark(black, white);
   border-radius: 0.5rem;
+  background-color: light-dark(white, black);
   width: 10rem;
 }
