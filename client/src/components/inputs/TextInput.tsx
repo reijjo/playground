@@ -16,7 +16,7 @@ export const TextInput = ({
 }: TextInputProps) => {
   return (
     <div className="input-text-group">
-      <label>{labelText}</label>
+      <label htmlFor={id}>{labelText}</label>
       <input type="text" name={name} id={id} {...props} />
     </div>
   );

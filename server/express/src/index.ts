@@ -29,11 +29,10 @@ let server = http.createServer(app);
 // });
 
 const startServer = async () => {
-  try {
-		await connectDatabase(DATABASE_URL);
+	await connectDatabase(DATABASE_URL);
 
+  try {
     server.listen(PORT, () => {
-			connectDatabase(DATABASE_URL);
       console.log(yellowBright(`ENV = '${Bun.env.NODE_ENV}'`));
       console.log(cyanBright(`Server running on port ${PORT}`));
     });

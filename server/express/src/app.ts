@@ -3,6 +3,7 @@ import morgan from "morgan";
 import cors from "cors";
 import helmet from "helmet";
 import { errorHandler } from "./middleware/errorHandler";
+import { userRouter } from "./routes/userRoute";
 
 const app = express();
 
@@ -21,6 +22,8 @@ app.use(cors(corsOptions));
 app.get("/", (_req, res) => {
   res.send("hello todo");
 });
+
+app.use('/api/users/', userRouter)
 
 app.use(errorHandler);
 
