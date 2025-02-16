@@ -2,9 +2,7 @@ import "./Register.css";
 
 import { useFormStatus } from "react-dom";
 
-import { Button } from "../../components/buttons/Button";
-import { FlexContainer } from "../../components/container/FlexContainer";
-import { TextInput } from "../../components/inputs/TextInput";
+import { Button, FlexContainer, TextInput } from "../../components";
 
 export const Register = () => {
   const { pending } = useFormStatus();

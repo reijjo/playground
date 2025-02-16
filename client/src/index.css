@@ -26,6 +26,27 @@ a {
   margin: 0 auto;
 }
 
+/* Fonts */
+
+/* .dynapuff-<uniquifier> {
+  font-family: "DynaPuff", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+} */
+
+/* Fonts END */
+
+:is(h1) {
+  font-family: "DynaPuff", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 5rem;
+}
+
 :root {
   /* color-scheme: light dark; */
 

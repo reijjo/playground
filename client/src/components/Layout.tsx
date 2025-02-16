@@ -12,9 +12,7 @@ export const Layout = () => {
       <div className="layout-container">
         <Navbar />
         <main>
-          <div className="wrapper">
-            <Outlet />
-          </div>
+          <Outlet />
         </main>
         <Footer />
       </div>

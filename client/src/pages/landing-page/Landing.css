@@ -1,0 +1,21 @@
+.landing-container {
+  width: 100%;
+  background-color: var(--yellow-6);
+}
+
+.hero-section {
+  background-image: url("../../assets/colors.jpg");
+  background-size: cover;
+  height: 80%;
+  /* background-color: rgba(255, 255, 255, 0.2); */
+}
+
+.hero-header {
+  position: relative;
+  display: grid;
+  place-items: center;
+
+  & h1 {
+    text-shadow: 2px 2px 4px light-dark(white, black);
+  }
+}
