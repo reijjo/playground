@@ -2,6 +2,7 @@ import express from "express";
 import morgan from "morgan";
 import cors from "cors";
 import helmet from "helmet";
+import { errorHandler } from "./middleware/errorHandler";
 
 const app = express();
 
@@ -20,5 +21,7 @@ app.use(cors(corsOptions));
 app.get("/", (_req, res) => {
   res.send("hello todo");
 });
+
+app.use(errorHandler);
 
 export default app;
