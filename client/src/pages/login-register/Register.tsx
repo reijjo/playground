@@ -1,43 +1,66 @@
 import "./Register.css";
 
-import { useFormStatus } from "react-dom";
+import { ChangeEvent, useState } from "react";
 
 import { Button, FlexContainer, TextInput } from "../../components";
+import { Toast } from "../../components/toast/Toast";
+import { useRegisterMutation } from "../../features/api/authApi";
+import { initialLoginRegisterForm } from "../../utils/initialValues";
+import { LoginRegisterForm } from "../../utils/types";
 
 export const Register = () => {
-  const { pending } = useFormStatus();
+  const [credentials, setCredentials] = useState<LoginRegisterForm>(
+    initialLoginRegisterForm,
+  );
 
-  const handleRegister = (event: React.FormEvent<HTMLFormElement>) => {
+  const [register, { isLoading }] = useRegisterMutation();
+
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setCredentials((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleRegister = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    console.log("Registering...");
+
+    try {
+      const response = await register(credentials).unwrap();
+      console.log("RESPONSE", response);
+      setCredentials(initialLoginRegisterForm);
+    } catch (error) {
+      console.log("ERROR", error);
+    }
   };
 
   return (
     <div className="register-page">
-      <FlexContainer width="s">
+      <FlexContainer width="m">
         <h1>Register</h1>
         <form className="register-form" onSubmit={handleRegister}>
           <TextInput
-            name="nimi"
-            id="nimi-id"
+            name="username"
+            id="username"
             labelText="username"
-            placeholder="Hi im placeholder"
+            placeholder="Your username"
+            onChange={handleInputChange}
           />
           <TextInput
-            name="salasana"
-            id="salasana-id"
+            name="password"
+            id="password"
             labelText="password"
             type="password"
-            placeholder="Hi im placeholder"
+            placeholder="Your password"
+            onChange={handleInputChange}
           />
           <Button
             type="submit"
             className="register-button"
-            children={pending ? "Registering..." : "Register"}
-            disabled={pending}
+            children={isLoading ? "Registering..." : "Register"}
+            disabled={isLoading}
           />
         </form>
       </FlexContainer>
+      <Toast />
     </div>
   );
 };

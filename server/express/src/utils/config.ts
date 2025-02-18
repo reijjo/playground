@@ -3,7 +3,8 @@ const envVars = [
 	"MONGO_USER",
 	"MONGO_PW",
 	"MONGO_CLUSTER",
-	"MONGO_EXTRA"
+	"MONGO_EXTRA",
+	"SESSION_SECRET"
 ] as const;
 
 for (const varName of envVars) {
@@ -17,7 +18,8 @@ const {
 	MONGO_USER,
 	MONGO_PW,
 	MONGO_CLUSTER,
-	MONGO_EXTRA
+	MONGO_EXTRA,
+	SESSION_SECRET
 } = Bun.env;
 
 const DATABASE_URL = `mongodb+srv://${MONGO_USER}:${MONGO_PW}@${MONGO_CLUSTER}/${MONGO_EXTRA}`;
@@ -28,5 +30,6 @@ export const config = {
 	MONGO_PW,
 	MONGO_CLUSTER,
 	MONGO_EXTRA,
-	DATABASE_URL
+	DATABASE_URL,
+	SESSION_SECRET
 };
