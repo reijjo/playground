@@ -1,9 +1,15 @@
-import type { Request, Response, NextFunction } from "express";
+import { UserModel } from "../db/models/userModel";
+import type { NextFunction, Request, Response } from "express";
 
-export const getAllUsers = async (_req: Request, res: Response, next: NextFunction) => {
-	try {
-		res.send("All users");
-	} catch (error) {
-		next(error);
-	}
-}
+export const getAllUsers = async (
+  _req: Request,
+  res: Response,
+  next: NextFunction,
+) => {
+  try {
+    const users = await UserModel.find({});
+    res.status(200).json(users);
+  } catch (error) {
+    next(error);
+  }
+};

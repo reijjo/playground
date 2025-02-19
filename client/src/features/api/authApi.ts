@@ -1,4 +1,8 @@
-import { BasicApiResponse, LoginRegisterForm } from "../../utils/types";
+import {
+  BasicApiResponse,
+  LoginRegisterForm,
+  SessionApiResponse,
+} from "../../utils/types";
 import { baseApi } from "./baseApi";
 
 export const authApiSlice = baseApi.injectEndpoints({
@@ -10,7 +14,31 @@ export const authApiSlice = baseApi.injectEndpoints({
         body: credentials,
       }),
     }),
+    login: builder.mutation<BasicApiResponse, LoginRegisterForm>({
+      query: (credentials) => ({
+        url: "/auth/login",
+        method: "POST",
+        body: credentials,
+      }),
+    }),
+    logout: builder.mutation<BasicApiResponse, void>({
+      query: () => ({
+        url: "/auth/logout",
+        method: "POST",
+      }),
+    }),
+    getSessionUser: builder.query<SessionApiResponse, void>({
+      query: () => ({
+        url: "/auth/me",
+        method: "GET",
+      }),
+    }),
   }),
 });
 
-export const { useRegisterMutation } = authApiSlice;
+export const {
+  useRegisterMutation,
+  useLoginMutation,
+  useLogoutMutation,
+  useGetSessionUserQuery,
+} = authApiSlice;
